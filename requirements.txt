@@ -1,0 +1,119 @@
+
+* **WRF** (Fortran/C)
+* **STILT** (https://uataq.github.io/stilt/)
+* **Inversion in Julia**
+* Python libraries for pre/post-processing.
+
+
+
+For running Python-based STILT preprocessing, footprint handling, and analysis:
+
+```txt
+# Core scientific stack
+numpy>=1.21
+scipy>=1.7
+pandas>=1.3
+xarray>=0.20
+netCDF4>=1.5
+h5py>=3.1
+pyyaml>=5.4
+
+# Visualization
+matplotlib>=3.4
+seaborn>=0.11
+cartopy>=0.20
+tqdm>=4.60
+
+# Machine learning or inversion support
+scikit-learn>=0.24
+joblib>=1.1
+
+# Optional: emcee for Bayesian inversion
+emcee>=3.1
+
+# Jupyter for notebooks
+jupyterlab>=3.0
+```
+
+
+
+---
+2. R Requirements (for UTAQ/STILT)
+
+If you’re using the **STILT UTAQ inversion in R**, you’ll need a separate R environment setup:
+
+```R
+# Install these from R terminal or RStudio
+install.packages(c(
+  "ncdf4",        # Reading NetCDF
+  "fields",       # Gridding and interpolation
+  "ggplot2",      # Plotting
+  "dplyr",        # Data manipulation
+  "tidyr",        # Tidy data
+  "lubridate",    # Time handling
+  "Rcpp",         # For speed
+  "Matrix",       # Sparse matrices
+  "yaml"          # Read config files
+))
+```
+
+
+---
+
+3. Julia Requirements (for inversion)
+
+For Julia-based inversion modeling (e.g., Bayesian inversion, sparse solvers):
+
+
+
+```julia
+] activate .
+] instantiate
+```
+
+---
+
+ 4. System Packages (for WRF/STILT + general setup)
+
+You will also need the following **system-level tools**:
+
+```bash
+sudo apt update && sudo apt install -y \
+    gfortran make mpich build-essential \
+    libnetcdf-dev netcdf-bin \
+    libhdf5-dev \
+    python3-dev python3-pip \
+    r-base julia git
+```
+
+> *WRF** itself requires its own compilation (with NetCDF and parallel support). It’s typically outside Python dependency management. You’ll run WRF in its own folder.
+
+---
+
+5. Environment file (Optional: for conda)
+
+If you prefer `conda`, here’s a sample `environment.yml`:
+
+```yaml
+name: geminoa-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - numpy
+  - scipy
+  - pandas
+  - xarray
+  - netcdf4
+  - h5py
+  - matplotlib
+  - seaborn
+  - cartopy
+  - tqdm
+  - scikit-learn
+  - joblib
+  - emcee
+  - jupyterlab
+  - pip
+  - pip:
+      - pyyaml

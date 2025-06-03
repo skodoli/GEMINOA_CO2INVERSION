@@ -1,0 +1,5 @@
+/var/spool/slurm/job00742/slurm_script: line 13: cd: /media/hdd2/skodoli/STILTR/myproject/r: No such file or directory
+Loading required package: pracma
+Error in sprintf("%04i/%02i/%02i %02i", yr[i], mon[i], day[i], hr[i]) : 
+  invalid format '%04i'; use format %f, %e, %g or %a for numeric objects
+Execution halted

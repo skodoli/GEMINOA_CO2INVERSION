@@ -1,0 +1,107 @@
+&share
+ wrf_core = 'ARW',
+ max_dom = 2,
+ start_date = '2023-11-30_00:00:00','2023-11-30_00:00:00'
+ end_date   = '2023-12-31_00:00:00','2023-12-31_00:00:00'
+ interval_seconds = 21600,
+ io_form_geogrid = 2,
+/
+
+&time_control
+run_days                   = 32,
+run_hours                  = 0,
+run_minutes                = 0,
+run_seconds                = 0,
+start_year                 = 2023, 2023,
+start_month                = 11, 11,
+start_day                  = 30, 30,
+start_hour                 = 00, 00,
+start_minute               = 00, 00,
+start_second               = 00, 00,
+end_year                   = 2023, 2023,
+end_month                  = 12, 12,
+end_day                    = 31, 31,
+end_hour                   = 00, 00,
+end_minute                 = 00, 00,
+end_second                 = 00, 00,
+interval_seconds           = 21600,
+input_from_file            = .true.,.true.,
+history_interval           = 60,60,
+frames_per_outfile         = 1,1, 
+restart                    = .false.,    
+restart_interval           = 1440, 
+io_form_history            = 2,
+io_form_restart            = 2,
+io_form_input              = 2,
+io_form_boundary           = 2,
+debug_level                = 0,
+/
+
+&domains
+time_step                  = 12,
+time_step_fract_num        = 0,
+time_step_fract_den        = 1,
+max_dom                    = 2,
+e_we                       = 75, 121,
+e_sn                       = 70, 100,
+e_vert                     = 34,34,
+num_metgrid_levels         = 34,
+dx                         = 9000,3000,
+dy                         = 9000,3000, 
+grid_id                    = 1, 2,
+parent_id                  = 1, 1,
+i_parent_start             = 1, 25,
+j_parent_start             = 1, 25,
+parent_grid_ratio          = 1, 3,
+parent_time_step_ratio     = 1,
+feedback                   = 0,
+smooth_option              = 0,
+smooth_cg_topo             = .true.,
+/
+
+&physics
+mp_physics                 = 8,8,
+ra_lw_physics              = 4,4,
+ra_sw_physics              = 4,4,
+radt                       = 10,10,
+sf_sfclay_physics          = 1,1,
+sf_surface_physics         = 2,2,
+bl_pbl_physics             = 1,1,
+bldt                       = 0,0,         
+ysu_topdown_pblmix         = 1,
+cu_physics                 = 0,0,
+cudt                       = 0,0,
+sf_urban_physics           = 2,2,
+icloud                     = 1,
+num_land_cat               = 21,
+/
+
+&dynamics
+hybrid_opt                  = 2,
+w_damping                   = 0,
+diff_opt                    = 1,1,
+km_opt                      = 4,4,
+epssm                       = 0.2,
+diff_6th_opt                = 0,0,
+diff_6th_factor             = 0.12,
+base_temp                   = 290.
+non_hydrostatic             = .true., .true.,
+damp_opt                    = 3,
+do_avgflx_em                = 1,1, 
+do_avgflx_cugd              = 1,1, 
+/
+
+&bdy_control
+spec_bdy_width              = 5,
+specified                   = .true.,
+nested                      = .true.,
+/
+
+&grib2
+/
+
+&namelist_quilt
+nio_tasks_per_group = 0,
+nio_groups = 1,
+/
+

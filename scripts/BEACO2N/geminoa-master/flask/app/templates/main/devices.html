@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}List of Devices{% endblock %}
+
+{% block content %}
+<h1>Devices</h1>
+<table>
+    <thead>
+        <tr>
+            {% if devices %}
+            {% for key in devices[0].__dict__.keys() %}
+            {% if key[0] != '_' %}
+            <th>{{ key.replace('_', ' ').title() }}</th>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% if devices %}
+        {% for device in devices %}
+        <tr>
+            {% for key, value in device.__dict__.items() %}
+            {% if key[0] != '_' %}
+            <td>{{ value }}</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="3">No devices found.</td>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

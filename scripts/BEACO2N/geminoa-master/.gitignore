@@ -1,0 +1,17 @@
+.DS_Store
+flask/db/app.db
+flask/migrations/
+flask/log/
+flask/log/secrets-and-variables
+beacon-data/
+beacon-data-old/
+beacon-problem-data/
+acquinas-2021.tar.gz acquinas-2022.tar.gz acquinas-2023.tar.gz bellahouston-2021.tar.gz bellahouston-2022.tar.gz bellahouston-2023.tar.gz notredame-2021.tar.gz notredame-2022.tar.gz notredame-2023.tar.gz
+*.tar.gz
+beacon-data-aquinas/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+data/

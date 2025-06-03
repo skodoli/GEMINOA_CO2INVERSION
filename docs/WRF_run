@@ -1,0 +1,24 @@
+
+###################################################################################################
+📘 WRF Model Modification (for GEMINOA)
+The Weather Research and Forecasting (WRF) model is used to generate meteorological input for the STILT model. You likely modified it to:
+
+🔧 Key Modifications
+1. High-Resolution Urban Domain Setup
+Nested domains down to 3 km or finer resolution over Glasgow.
+
+Urban canopy parameters configured using BEP or BEP+BEM schemes.
+
+2. Land Use Classification
+
+Tuned land surface properties for more accurate PBL behavior.
+
+3. Planetary Boundary Layer (PBL) Scheme
+Switched to a PBL scheme suitable for dispersion modeling, e.g., MYNN or YSU.
+
+4. WRF Output Customization
+Extracted only essential variables (e.g., U, V, W, T, P, PBLH) for input to STILT.
+
+Saved output in hourly NetCDF format compatible with STILT preprocessing.
+
+####################################################################################################

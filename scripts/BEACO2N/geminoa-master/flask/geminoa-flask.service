@@ -1,0 +1,14 @@
+# /etc/systemd/system/
+[Unit]
+Description=Gunicorn instance to serve geminoa-flask
+After=network.target
+
+[Service]
+User=git
+Group=www-data
+WorkingDirectory=/var/www/geminoa/geminoa/flask
+EnvironmentFile=/var/www/geminoa/geminoa/flask/secrets-and-variables
+ExecStart=/home/git/micromamba/envs/geminoa-flask/bin/gunicorn --workers ${GUNICORN_WORKERS} --bind unix:geminoa-flask.sock --error-logfile ${GUNICORN_ERROR_LOGFILE}  --access-logfile=${GUNICORN_ACCESS_LOGFILE} -m 007 'app:create_app()'
+
+[Install]
+WantedBy=multi-user.target
