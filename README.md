@@ -18,10 +18,7 @@ This repository contains code and sample data for inverse modeling of urban COâ‚
 
 ## Getting Started
 
-### 1. Clone the repo
-```bash
-git clone https://github.com/skodoli/geminoa-inversion-model.git
-cd geminoa-inversion-model
+
 
 
 ########################################################################################################
