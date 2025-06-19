@@ -11,10 +11,10 @@ This repository contains code and sample data for inverse modeling of urban COâ‚
 
 ## Repository Structure
 
-- `data/`: Sample input files (small)
-- `src/`: Scripts for preprocessing and inversion
-- `notebooks/`: Example notebook to run a full case
-- `config/`: Model and run-time configuration
+-  Sample input files (small)
+-  Scripts for preprocessing and inversion
+-  Example notebook to run a full case
+-  Model and run-time configuration
 
 ## Getting Started
 
